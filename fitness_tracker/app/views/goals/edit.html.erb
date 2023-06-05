@@ -1,0 +1,27 @@
+<h1>Edit Goal</h1>
+
+<%= form_with model: @goal, url: goal_path(@goal), method: :patch do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :progress %>
+    <%= form.number_field :progress %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, "User" %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
+  </div>
+
+  <%= form.submit 'Update Goal' %>
+<% end %>
+
+<%= link_to 'Cancel', goal_path(@goal) %>

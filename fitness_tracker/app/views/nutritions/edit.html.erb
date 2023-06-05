@@ -1,0 +1,32 @@
+<h1>Edit Nutrition</h1>
+
+<%= form_with model: @nutrition, url: nutrition_path(@nutrition), method: :patch do |form| %>
+  <div>
+    <%= form.label :calories %>
+    <%= form.number_field :calories %>
+  </div>
+
+  <div>
+    <%= form.label :carbohydrates %>
+    <%= form.number_field :carbohydrates %>
+  </div>
+
+  <div>
+    <%= form.label :proteins %>
+    <%= form.number_field :proteins %>
+  </div>
+
+  <div>
+    <%= form.label :fats %>
+    <%= form.number_field :fats %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, "User" %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
+  </div>
+
+  <%= form.submit 'Update Nutrition' %>
+<% end %>
+
+<%= link_to 'Cancel', nutrition_path(@nutrition) %>

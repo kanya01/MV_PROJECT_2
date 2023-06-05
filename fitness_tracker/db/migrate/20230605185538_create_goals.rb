@@ -8,5 +8,6 @@ class CreateGoals < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+    add_foreign_key :goals, :users
   end
 end
