@@ -10,8 +10,9 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV['POSTGRESQL_USERNAME'] %>
   password: <%= ENV['POSTGRESQL_PASSWORD'] %>
-  host: <%= ENV['POSTGRESQL_HOST'] %>
-
+  #host: <%= ENV['POSTGRESQL_HOST'] %>
+  host: localhost
+  port: 5432
   timeout: 5000
 
 development:
