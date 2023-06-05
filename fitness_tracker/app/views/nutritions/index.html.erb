@@ -1,0 +1,32 @@
+<h1>Nutritions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Calories</th>
+      <th>Carbohydrates</th>
+      <th>Proteins</th>
+      <th>Fats</th>
+      <th>User</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @nutritions.each do |nutrition| %>
+      <tr>
+        <td><%= nutrition.calories %></td>
+        <td><%= nutrition.carbohydrates %></td>
+        <td><%= nutrition.proteins %></td>
+        <td><%= nutrition.fats %></td>
+        <td><%= nutrition.user.name %></td>
+        <td>
+          <%= link_to 'Show', nutrition_path(nutrition) %>
+          <%= link_to 'Edit', edit_nutrition_path(nutrition) %>
+          <%= link_to 'Delete', nutrition_path(nutrition), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Nutrition', new_nutrition_path %>
