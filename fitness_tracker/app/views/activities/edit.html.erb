@@ -1,0 +1,32 @@
+<h1>Edit Activity</h1>
+
+<%= form_with model: @activity, url: activity_path(@activity), method: :patch do |form| %>
+  <div>
+    <%= form.label :exercise %>
+    <%= form.text_field :exercise %>
+  </div>
+
+  <div>
+    <%= form.label :sets %>
+    <%= form.number_field :sets %>
+  </div>
+
+  <div>
+    <%= form.label :repetitions %>
+    <%= form.number_field :repetitions %>
+  </div>
+
+  <div>
+    <%= form.label :weight %>
+    <%= form.number_field :weight %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, "User" %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
+  </div>
+
+  <%= form.submit 'Update Activity' %>
+<% end %>
+
+<%= link_to 'Cancel', activity_path(@activity) %>

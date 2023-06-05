@@ -1,0 +1,10 @@
+<h1>Nutrition Details</h1>
+
+<p><strong>Calories:</strong> <%= @nutrition.calories %></p>
+<p><strong>Carbohydrates:</strong> <%= @nutrition.carbohydrates %></p>
+<p><strong>Proteins:</strong> <%= @nutrition.proteins %></p>
+<p><strong>Fats:</strong> <%= @nutrition.fats %></p>
+<p><strong>User:</strong> <%= @nutrition.user.name %></p>
+
+<%= link_to 'Edit', edit_nutrition_path(@nutrition) %> |
+<%= link_to 'Back to Nutritions', nutritions_path %>
